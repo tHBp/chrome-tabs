@@ -22,8 +22,6 @@
     const TAB_CONTENT_MARGIN = 9
     const TAB_CONTENT_OVERLAP_DISTANCE = 1
 
-    const TAB_OVERLAP_DISTANCE = (TAB_CONTENT_MARGIN * 2) + TAB_CONTENT_OVERLAP_DISTANCE
-
     const TAB_CONTENT_MIN_WIDTH = 24
     const TAB_CONTENT_MAX_WIDTH = 240
 
@@ -187,14 +185,7 @@
                 if (contentWidth < TAB_SIZE_MINI) tabEl.setAttribute('is-mini', '')
             })
 
-            let styleHTML = ''
-            this.tabPositions.forEach((position, i) => {
-                styleHTML += `
-          .chrome-tabs[data-chrome-tabs-instance-id="${ this.instanceId }"] .chrome-tab:nth-child(${ i + 1 }) {
-            transform: translate3d(${ position }px, 0, 0)
-          }
-        `
-            })
+            let styleHTML = '';
             this.styleEl.innerHTML = styleHTML
         }
 
